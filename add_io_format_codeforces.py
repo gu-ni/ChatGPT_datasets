@@ -72,7 +72,7 @@ codeforces_dataset = load_dataset("open-r1/codeforces", split="train", name='ver
 filtered_codeforces_dataset = []
 for x in codeforces_dataset:
     if x["description"] and x["rating"] and x["input_format"] and x["output_format"] \
-    and len(x["description"]) <= 500 and x["rating"] >= 2000 and x["rating"] <= 3000 \
+    and len(x["description"]) <= 1000 and x["rating"] > 3000\
     and "multiple test" not in x["input_format"] and not x["generated_checker"] \
     and x["examples"] and len(x["official_tests"]) <= 20:
         filtered_codeforces_dataset.append(x)
@@ -81,7 +81,7 @@ del codeforces_dataset
 
 
 # 입력 파일 경로
-input_jsonl_path = "/home/work/users/PIL_ghj/LLM/datasets/ChatGPT/CodeForces/codeforces_narrative_by_gpt.jsonl"
+input_jsonl_path = "/home/work/users/PIL_ghj/LLM/datasets/ChatGPT/CodeForces/codeforces_challenging_narrative_by_gpt.jsonl"
 # "/home/work/users/PIL_ghj/LLM/datasets/human-eval/data/HumanEval_in_lcb_format.jsonl"
 # "/home/work/users/PIL_ghj/LLM/datasets/live-code-bench/test6.jsonl"
 
@@ -89,7 +89,7 @@ input_jsonl_path = "/home/work/users/PIL_ghj/LLM/datasets/ChatGPT/CodeForces/cod
 output_path_name = "CodeForces"  # HumanEval LiveCodeBench CodeForces
 
 # 파일명
-file_name = "codeforces_narrative_by_gpt_with_io.jsonl" # humaneval_narrative_by_gpt_test.jsonl test6_narrative_by_gpt_test.jsonl
+file_name = "codeforces_challenging_narrative_by_gpt_with_io.jsonl" # humaneval_narrative_by_gpt_test.jsonl test6_narrative_by_gpt_test.jsonl
 
 
 output_path = f"/home/work/users/PIL_ghj/LLM/datasets/ChatGPT/{output_path_name}"

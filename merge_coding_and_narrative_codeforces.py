@@ -2,7 +2,6 @@
 import os
 import re
 import json
-from datasets import load_dataset
 
 # %%
 
@@ -59,16 +58,16 @@ def load_existing_question_ids(path):
     return existing_ids
 
 # %%
-codeforces_in_lcb_format_path = "/home/work/users/PIL_ghj/LLM/datasets/codeforces/codeforces_in_lcb_format.jsonl"
+codeforces_in_lcb_format_path = "/home/work/users/PIL_ghj/LLM/datasets/codeforces/codeforces_challenging_in_lcb_format.jsonl"
 
 # 입력 파일 경로
-input_jsonl_path = "/home/work/users/PIL_ghj/LLM/datasets/ChatGPT/CodeForces/codeforces_narrative_by_gpt.jsonl"
+input_jsonl_path = "/home/work/users/PIL_ghj/LLM/datasets/ChatGPT/CodeForces/codeforces_challenging_narrative_by_gpt.jsonl"
 
 # 출력 파일 경로
 output_path_name = "CodeForces"  # HumanEval LiveCodeBench CodeForces
 
 # 파일명
-file_name = "codeforces_merged.jsonl" # humaneval_narrative_by_gpt_test.jsonl test6_narrative_by_gpt_test.jsonl
+file_name = "codeforces_challenging_merged.jsonl" # humaneval_narrative_by_gpt_test.jsonl test6_narrative_by_gpt_test.jsonl
 
 
 output_path = f"/home/work/users/PIL_ghj/LLM/datasets/ChatGPT/{output_path_name}"
